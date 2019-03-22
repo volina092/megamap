@@ -1,4 +1,3 @@
-
 import sys
 import requests
 import pygame
@@ -63,6 +62,7 @@ while running:
             if event.button == 4: #скроллим вверх
                 delta_x *= 1.1
                 delta_y *= 1.1
+                
             if event.button == 5: #скроллим вниз
                 delta_x *= 0.9
                 delta_y *= 0.9
@@ -70,22 +70,22 @@ while running:
         keystate = pygame.key.get_pressed()
         if keystate[pygame.K_LEFT]:
             tl = float(toponym_longitude)
-            tl -= 0.003
-            toponym_lattitude = str(tl)
+            tl -= delta_x 
+            toponym_longitude = str(tl)
             
         if keystate[pygame.K_RIGHT]:
             tl = float(toponym_longitude)
-            tl += 0.003
-            toponym_lattitude = str(tl)
+            tl += delta_x
+            toponym_longitude = str(tl)
             
         if keystate[pygame.K_UP]:
             tl = float(toponym_lattitude)
-            tl += 0.003
+            tl += delta_x 
             toponym_lattitude = str(tl)
             
         if keystate[pygame.K_DOWN]:
             tl = float(toponym_lattitude)
-            tl -= 0.003
+            tl -= delta_x 
             toponym_lattitude = str(tl)
         
     map_params = {
