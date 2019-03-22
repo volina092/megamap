@@ -108,5 +108,5 @@ while running:
     
     screen.blit(pygame.image.load(map_file), (0, 0))
     pygame.display.flip()
-    os.remove(map_file)
+    os.remove(map_file) 
 pygame.quit()
